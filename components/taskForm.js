@@ -11,13 +11,11 @@
           <button>Add</button>
         </form>`,
         // controller below
-        controller: function() {
-            var $ctrl = this;
-            // console.log($ctrl);
-            $ctrl.addTodo = function(task) {
-              todoList.push({item: task});
-              $ctrl.todo="";
-              console.log(todoList);
+        controller: function(TaskService) {
+            var vm = this;
+            vm.addTodo = function(task) {
+              TaskService.getData(task);
+              vm.todo="";
             };
           }
         };

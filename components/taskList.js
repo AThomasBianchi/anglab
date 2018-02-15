@@ -1,23 +1,25 @@
 (function() {
   var taskList = {
     bindings: {
-      list: "<"
+      // list: "<"
     },
 
     template:`
     <input placeholder="Filter your to-dos" ng-model="search">
     <ol>
-      <li ng-repeat="item in $ctrl.list | filter: search" list-hover>
-        {{ item.item }}
+      <li ng-repeat="task in $ctrl.tasks | filter: search" list-hover>
+        {{ task.item }}
         <i class="material-icons" ng-click="$ctrl.removeTodo($index)" i-hover>clear</i>
       </li>
     </ol>
     `,
 
-    controller: function() {
-      var $ctrl = this;
-      $ctrl.removeTodo = function(index) {
-        $ctrl.list.splice(index, 1);
+    controller: function(TaskService) {
+      var vm = this;
+      vm.tasks = TaskService.setData();
+      console.log(vm.tasks);
+      vm.removeTodo = function(index) {
+        vm.tasks.splice(index, 1);
       };
     }
 
