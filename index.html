@@ -2,13 +2,9 @@
 <html ng-app="app" lang="en">
   <head>
     <meta charset="utf-8">
-    <!-- set viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- link to fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
-    <!-- link to icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- link to css -->
     <link href="style.css" type="text/css" rel="stylesheet">
     <title>TOTO List</title>
   </head>
@@ -18,26 +14,17 @@
     <div>
       <h1>TOTO List</h1>
       <p>A place to store the things that a hundred men or more could ever do</p>
-      <!-- filter the list -->
-      <input placeholder="Filter your to-dos" ng-model="search">
-      <ol>
-        <!-- put list items here -->
-        <li ng-repeat="item in form.todoList | filter: search">
-          {{ item.item }}
-          <i class="material-icons" ng-click="form.removeTodo($index)">clear</i>
-        </li>
-      </ol>
-      <form ng-submit="form.addTodo(form.todo)">
-        <!--  add item to list -->
-        <input type="text" placeholder="Add your to-do" ng-model="form.todo">
-        <button>Add</button>
-      </form>
+      <task-list list="form.todoList"></task-list>
+      <task-form></task-form>
     </div>
 
     <!--  links to my scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
     <script src="module.js"></script>
     <script src="controller.js"></script>
-
+    <script src="components/taskForm.js"></script>
+    <script src="components/taskList.js"></script>
+    <script src="directives/hoverState.js"></script>
+    <script src="directives/iHoverState.js"></script>
   </body>
 </html>
