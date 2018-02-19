@@ -2,7 +2,6 @@
   var taskForm = {
 
     template:
-    // put the form.addTodo(form.todo)
       `
       <div>
         <p><a href="#!/welcome"><i class="material-icons">arrow_back</i>Go back</a></p>
@@ -17,7 +16,6 @@
       </div>
       `,
 
-    // controller below
     controller: function(TaskService) {
         var vm = this;
         vm.addTodo = function(task) {
