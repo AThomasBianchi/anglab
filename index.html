@@ -6,25 +6,23 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="style.css" type="text/css" rel="stylesheet">
-    <title>TOTO List</title>
+    <title>TODO List</title>
   </head>
 
-  <body ng-controller="FormController as form">
+  <body>
 
-    <div>
-      <h1>TOTO List</h1>
-      <p>A place to store the things that a hundred men or more could ever do</p>
-      <task-list list="form.todoList"></task-list>
-      <task-form></task-form>
-    </div>
+    <ng-view></ng-view>
 
     <!--  links to my scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.min.js"></script>
     <script src="module.js"></script>
     <script src="controller.js"></script>
     <script src="taskService.js"></script>
+    <script src="config.js"></script>
     <script src="components/taskForm.js"></script>
     <script src="components/taskList.js"></script>
+    <script src="components/taskWelcome.js"></script>
     <script src="directives/hoverState.js"></script>
     <script src="directives/iHoverState.js"></script>
   </body>

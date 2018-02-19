@@ -2,6 +2,6 @@
 (function() {
 
   angular
-    .module("app", []);
+    .module("app", ["ngRoute"]);
 
 })();
